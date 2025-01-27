@@ -24,27 +24,22 @@ static const bool Init = [](){
 void solve(){
     int n;
     cin>>n;
-    vi arr(n);
+    vll arr(n);
     for(int i = 0; i<n;i++) cin>>arr[i];
-    vi ans;
-    ll sum = (accumulate(arr.begin(),arr.end(),0LL));
-    ans.pb(sum);
-    ll maxi = ans[0];
+    ll sum = accumulate(arr.begin(),arr.end(),0LL);
+    ll maxi = sum;
     if(arr.size()>1){
         while(arr.size()>1){
-        for(int i = arr.size()-1;i>=0;i--){
-            arr[i] = arr[i]-arr[i-1];
+            for(int i = 1;i<arr.size();i++){
+                arr[i-1] = arr[i]-arr[i-1];
+            }
+            arr.pop_back();
+            sum = abs(accumulate(arr.begin(),arr.end(),0LL));
+            maxi = max(sum,maxi);
         }
-        arr.erase(arr.begin());
-        sum = abs(accumulate(arr.begin(),arr.end(),0LL));
-        ans.pb(sum);
-        }
-    }
-    for(auto i : ans){
-        if(i>maxi) maxi = i;
     }
     cout<<maxi<<endl;
-
+    return;
 }
 int main(){
     ll T;
