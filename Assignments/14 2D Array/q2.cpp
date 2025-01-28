@@ -1,4 +1,4 @@
-// Write a program to print the elements of both the diagonals in a square matrix.
+// Write a program to rotate the matrix by 90 degrees anti-clockwise.
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -11,13 +11,11 @@ int main() {
             cin>>arr[i][j];
         }
     }
-    for(int i = 0; i<n;i++){
+    for(int i = n-1; i>=0;i--){
         for(int j = 0; j<m;j++){
-            if(i==j || j == n-1-i) cout<<arr[i][j]<<" ";
-            else cout<<"  ";
+            cout<<arr[j][i]<<" ";
         }
         cout<<endl;
     }
-    
     return 0;
 }

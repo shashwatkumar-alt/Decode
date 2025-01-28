@@ -1,3 +1,5 @@
+// Write a program to print the matrix in wave form.
+
 // 1 2 3       7 4 1
 // 4 5 6       2 5 8
 // 7 8 9       9 6 3
