@@ -2,7 +2,11 @@
 using namespace std;
 int main() { 
     string s = "Shashwat";
-    cout<<s<<endl;
-    
+    int n = s.size();
+    for (int i = 0; i < n; ++i) {
+        for (int j = i; j < n; ++j) {
+            cout << s.substr(i, j - i + 1) <<endl;
+        }
+    }
     return 0;
 }

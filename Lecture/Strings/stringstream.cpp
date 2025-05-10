@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<sstream>
 using namespace std;
 int main() { 
     string str;
