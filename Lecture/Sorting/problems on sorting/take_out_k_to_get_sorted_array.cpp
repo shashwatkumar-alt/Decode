@@ -1,4 +1,4 @@
-// given an array, arr[] containing 'n' integers, the taksk is to find an integer (say k) such that after replacing each and every index of the ayyar by |ai - k| where (i belongs to [1,n]), results in a sorted array. If no such integer exists that satisfies the above condition then return -1. Find the range of K.
+// given an array, arr[] containing 'n' integers, the task is to find an integer (say k) such that after replacing each and every index of the array by |ai - k| where (i belongs to [1,n]), results in a sorted array. If no such integer exists that satisfies the above condition then return -1. Find the range of K.
 
 #include<bits/stdc++.h>
 using namespace std;
