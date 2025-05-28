@@ -6,15 +6,15 @@ int main() {
     while(t--){
         int n;
         cin>>n;
-        int arr[n];
+        int hp[n];
         for(int i =0; i<n;i++){
-            cin>>arr[i];
+            cin>>hp[i];
         }
-        int min=arr[0];
+        int min=hp[0];
         for(int i = 0; i<n;i++){
-            if(arr[i]>=min){
+            if(hp[i]>=min){
                 cout<<"1 ";
-                min = arr[i];
+                min = hp[i];
             }
             else cout<<"0 ";
         }
