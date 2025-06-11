@@ -21,17 +21,17 @@ static const bool fastIO = [](){
 void conquer(){
     int n;
     cin>>n;
-    vi arr;
+    vi s;
     for(int i = 0; i<n;i++){
         int a,b;
         cin>>a>>b;
         if(a>=7){
-            arr.push_back(b);
+            s.push_back(b);
         }
     }
-    sort(arr.begin(),arr.end());
-    if(arr.size() == 0) cout<<-1<<endl;
-    else cout<<arr[0]<<endl;
+    sort(s.begin(),s.end());
+    if(s.size() == 0) cout<<-1<<endl;
+    else cout<<s[0]<<endl;
 }
 int main(){
     ll tc;

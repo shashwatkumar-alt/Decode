@@ -19,17 +19,22 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    int n;
-    cin>>n;
-    vi s(n);
-    unordered_map <int , int> mpp;
-    vi res;
-    int ans;
-    bool a = false;
-    for(int i = 0; i<n;i++){
-        cin>>s[i];
-        mpp[i]++;
-        if()
+    int n, q;
+    cin >> n >> q;
+    vector<ll> arr(n + 2, 0);
+    for (int i = 1; i <= n; ++i) cin >> arr[i];
+    ll count = 0;
+    for (int i = 1; i < n; ++i) count += min(arr[i], arr[i+1]);
+    while (q--) {
+        int temp;
+        ll x;
+        cin >> temp >> x;
+        if (temp > 1) count -= min(arr[temp-1], arr[temp]);
+        if (temp < n) count -= min(arr[temp], arr[temp+1]);
+        arr[temp] = x;
+        if (temp > 1) count += min(arr[temp-1], arr[temp]);
+        if (temp < n) count += min(arr[temp], arr[temp+1]);
+        cout << count << "\n";
     }
 }
 int main(){
@@ -38,4 +43,4 @@ int main(){
     while(tc--){
         conquer();
     }
-}   
+}

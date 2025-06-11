@@ -21,16 +21,11 @@ static const bool fastIO = [](){
 void conquer(){
     int n;
     cin>>n;
-    vi s(n);
-    unordered_map <int , int> mpp;
-    vi res;
-    int ans;
-    bool a = false;
-    for(int i = 0; i<n;i++){
-        cin>>s[i];
-        mpp[i]++;
-        if()
+    while(n>3 || n%2 == 0){
+        if(n%2==0) n = n/2;
+        else if(n>3) n -= 3;
     }
+    cout<<n<<"\n";
 }
 int main(){
     ll tc;
@@ -38,4 +33,4 @@ int main(){
     while(tc--){
         conquer();
     }
-}   
+}

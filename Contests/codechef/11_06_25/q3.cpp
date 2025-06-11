@@ -20,16 +20,31 @@ static const bool fastIO = [](){
 }();
 void conquer(){
     int n;
-    cin>>n;
-    vi s(n);
-    unordered_map <int , int> mpp;
-    vi res;
-    int ans;
-    bool a = false;
-    for(int i = 0; i<n;i++){
-        cin>>s[i];
-        mpp[i]++;
-        if()
+    cin >> n;
+
+    vector<int> arr(n);
+    for (int& x : arr) {
+        cin >> x;
+    }
+
+    int or_mask = 0;
+    int maxi    = arr[0];
+
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] < maxi) {
+            int diff = maxi ^ arr[i];
+            or_mask |= diff;
+        }
+        maxi = max(maxi, arr[i]);
+    }
+
+    if (or_mask == 0) {
+        cout << 0 << "\n";
+    }
+    else {
+        int b = 31 - __builtin_clz(or_mask);
+        int K = 1 << b;
+        cout << K << "\n";
     }
 }
 int main(){
@@ -38,4 +53,4 @@ int main(){
     while(tc--){
         conquer();
     }
-}   
+}
