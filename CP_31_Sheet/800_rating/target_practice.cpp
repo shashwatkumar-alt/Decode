@@ -19,11 +19,7 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    string s = "abcdefghijklmnopqrstuvwxyz";
-    for(int i = 0;i<s.size();i++){
-        s[i] = 'z'-s[i]+'a';
-    }
-    cout<<s;
+    ;
 }
 int main(){
     ll tc;

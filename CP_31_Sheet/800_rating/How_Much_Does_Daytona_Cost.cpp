@@ -19,11 +19,16 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    string s = "abcdefghijklmnopqrstuvwxyz";
-    for(int i = 0;i<s.size();i++){
-        s[i] = 'z'-s[i]+'a';
+    int n,k;
+    cin>>n>>k;
+    vi arr(n);
+    bool present = false;
+    for(int i = 0;i<n;i++){
+        cin>>arr[i];
+        if(arr[i]==k) present = true;
     }
-    cout<<s;
+    if(present) cout<<"YES\n";
+    else cout<<"NO\n";
 }
 int main(){
     ll tc;

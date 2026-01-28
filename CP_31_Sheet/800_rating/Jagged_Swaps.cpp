@@ -21,12 +21,10 @@ static const bool fastIO = [](){
 void conquer(){
     int n;
     cin>>n;
-    vi arr(n),brr(n);
-    for(int i = 0;i<n;i++) {
-        cin>>arr[i];
-        brr[i] = arr[i];
-    }
-    sort()
+    vi arr(n);
+    for(int i = 0;i<n;i++) cin>>arr[i];
+    if(arr[0] == 1) cout<<"YES\n";
+    else cout<<"NO\n";
 }
 int main(){
     ll tc;

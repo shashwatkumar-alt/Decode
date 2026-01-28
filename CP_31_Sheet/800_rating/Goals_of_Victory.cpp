@@ -1,3 +1,6 @@
+// no of matches = (n-1 * n)/2;
+
+
 #include<bits/stdc++.h>
 using namespace std;
 #define yes cout<<"YES"<<endl
@@ -19,11 +22,16 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    string s = "abcdefghijklmnopqrstuvwxyz";
-    for(int i = 0;i<s.size();i++){
-        s[i] = 'z'-s[i]+'a';
+    int n;
+    cin>>n;
+    vi arr(n-1);
+    int count = 0;
+    for(int i = 0; i<n-1;i++){
+        cin>>arr[i];
+        count += arr[i];
     }
-    cout<<s;
+    cout<<(-1*count)<<endl;
+    
 }
 int main(){
     ll tc;
