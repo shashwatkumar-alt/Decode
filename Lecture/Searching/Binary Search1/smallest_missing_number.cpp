@@ -18,7 +18,24 @@ int iterative(vector<int>& arr){
 }
 
 int bsearch(vector<int>& arr){
-    int l = 0,h=arr.size();
+    int n = arr.size();
+    int lo = 0,hi = n - 1;
+
+
+    int ans = -1;
+    auto check = [&](int idx){
+        return arr[idx] != idx;
+    };
+    while(lo<=hi){
+        int mid = lo + (hi-lo)/2;
+        if(check(mid)){
+            ans = mid;
+            hi = mid - 1;
+        }
+        else lo = mid +1;  
+    }
+    return ans;
+
 }
 
 int main() { 
@@ -32,5 +49,8 @@ int main() {
     // Finding the missing number.
     sort(arr.begin(),arr.end());
     int ans = iterative(arr);
+    cout<<ans<<'\n';
+    ans = bsearch(arr);
+    cout<<ans<<'\n';
     return 0;
 }
