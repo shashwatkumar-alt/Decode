@@ -19,7 +19,28 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    ;
+    ll n;
+    cin>>n;
+    vll a(n), b(n);
+    map<ll,ll> mp;
+    for(int i = 0; i<n; i++){
+        cin>>a[i];
+        mp[a[i]]++;
+    }
+    cin>>b[0];
+    for(int i = 1; i<n ;i++) {
+        cin>>b[i];
+        b[i] += b[i-1];
+    }
+    ll curr = 0,maxi = 0;
+    for(auto &it : mp){
+        auto at = lower_bound(b.begin(),b.end(),(n-curr));
+        int levels = distance(b.begin(),at)+1;
+        ll score = levels * it.first;
+        maxi = max(maxi, score);
+        curr += it.second;
+    }
+    cout<<maxi<<'\n';
 }
 int main(){
     ll tc;

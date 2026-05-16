@@ -27,7 +27,7 @@ void conquer() {
 
     a[n-1] = max(b[n-1], a[n-1]);
     for(int i = n-2; i >= 0; i--) {
-        a[i] = max(a[i+1], b[i]);
+        a[i] = max({a[i+1],a[i],b[i]});
     }
 
     vll pref(n + 1, 0);
@@ -39,11 +39,7 @@ void conquer() {
     for(int i = 0; i < q; i++) {
         int l, r;
         cin >> l >> r;
-        l--;
-        r--;
-        if(l >= 0 && r < n && l <= r) {
-            cout << pref[r+1] - pref[l] << " ";
-        }
+        cout << pref[r] - pref[l-1] << " ";
     }
     cout << '\n';
 }
