@@ -28,24 +28,19 @@ void conquer(){
             i--;
         }
     }
-    for(int i = 1; i < s.size(); i++){
-        if(s[i]=='2' && (s[i-1] == '1' || s[i-1] == '3')){
-            int ot_count = 0,t_count = 0,c = i-1;
-            while(c>=0 && (s[c] == '3' || s[c] == '1')) {
-                ot_count++;
-                c--;
-            }
-            while(i<s.size() && s[i] == '2') {
-                t_count++;
-                i++;
-            }
-            if(ot_count < t_count){
-                s.erase(s.begin()+(i-ot_count),s.begin()+i);
-            }
-            else s.erase(s.begin()+i,s.begin()+(i+t_count));
-            i--;
-        }
+    int one = -1, three = -1,two = -1;
+    if(s.find('1') != s.end()) one = distance(s.begin(),s.find('1'));
+    if(s.find('3') != s.end()) three = distance(s.begin(),s.find('3'));
+    for(int i = s.size()-1)
+    if(one != -1 && three != -1){
+        int mini = min(one,three);
+        for()
     }
+    else if(one == -1 && three != -1){
+
+    }
+
+
     cout<<(n-s.size())<<'\n';
 }
 int main(){
