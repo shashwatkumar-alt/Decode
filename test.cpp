@@ -19,24 +19,19 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    int n,k;
-    cin>>n>>k;
-    int maxi = INT_MIN;
-    for(int i = 0 ; i < k ; i++){
+    int n;
+    cin>>n;
+    ll sum = 0;
+    for(int i = 0; i<n ; i++){
         int temp;
         cin>>temp;
-        maxi = max(maxi,temp);
+        sum += temp;
     }
-    maxi++;
-    vi ans;
-    for(int i = 0 ; i < n ; i++ ){
-        int temp;
-        cin>>temp;
-        for(int j = 0; j < (maxi-temp);j++) ans.push_back(i+1);
-    }
-    cout<<ans.size()<<'\n';
-    for(int &i : ans) cout<<i<<" ";
-    cout<<'\n';
+    // cout<<sum<<"\n";
+    float root = sqrt((float)sum);
+    ll truncated = (ll) root;
+    if(truncated * truncated == (ll)sum) yes;
+    else no;
 }
 int main(){
     ll tc;
