@@ -19,14 +19,7 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    int l,r;
-    cin>>l>>r;
-    int diff = 1;
-    while(l <= r){
-        l += diff;
-        diff++;
-    }
-    cout<<diff-1<<'\n';
+    ;
 }
 int main(){
     ll tc;
