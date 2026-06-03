@@ -19,32 +19,25 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
-    string s;
-    cin >> s;
-
-    int sum = 0;
-    vector<int> v;
-
-    for(int i = 0; i<s.size(); i++){
-        int d = s[i] - '0';
-        sum += d;
-
-        if(i == 0) v.push_back(d - 1);
-        else v.push_back(d);
+    int n;
+    cin>>n;
+    vi arr(n);
+    bool even_present = false, odd_present = false;
+    ll sum = 0;
+    for(int i = 0; i<n;i++){
+        cin>>arr[i];
+        sum += arr[i];
+        if(!even_present && arr[i] % 2 == 0) even_present = true;
+        else if(!odd_present && arr[i] % 2 == 1) odd_present = true;
     }
-
-    sort(v.rbegin(), v.rend());
-
-    int ans = 0;
-
-    for(int x : v){
-        if(sum <= 9) break;
-
-        sum -= x;
-        ans++;
+    if(sum % 2 == 0){
+        if(even_present) yes;
+        else no;
     }
-
-    cout << ans << '\n';
+    else{
+        if(odd_present) yes;
+        else no;
+    }
 }
 int main(){
     ll tc;

@@ -19,31 +19,20 @@ static const bool fastIO = [](){
     return true;
 }();
 void conquer(){
+    int n;
+    cin >> n;
     string s;
     cin >> s;
 
-    int sum = 0;
-    vector<int> v;
-
-    for(int i = 0; i<s.size(); i++){
-        int d = s[i] - '0';
-        sum += d;
-
-        if(i == 0) v.push_back(d - 1);
-        else v.push_back(d);
-    }
-
-    sort(v.rbegin(), v.rend());
-
     int ans = 0;
-
-    for(int x : v){
-        if(sum <= 9) break;
-
-        sum -= x;
-        ans++;
+    for(int i = 0; i < n; ) {
+        int j = i;
+        while(j < n && s[j] == s[i]) {
+            j++;
+        }
+        ans += (j - i) / 3;
+        i = j;
     }
-
     cout << ans << '\n';
 }
 int main(){
