@@ -1,1 +1,0 @@
-1. gumpy bookstore owner question (Leetcode - 1052)
