@@ -15,5 +15,6 @@ class Bike{
 
 int main() { 
     Bike tvs(20,110);               // object creation // call to constructor
+    cout<<tvs.tyreSize<<" "<<tvs.engineCapacity<<endl;
     return 0;
 }
