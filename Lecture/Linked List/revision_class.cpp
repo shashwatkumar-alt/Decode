@@ -13,16 +13,24 @@ public:
     }
 };
 
-// void change(Student &shashwat){              It is not adviced to pass any object by reference.
+void change(Student &shashwat){              // Pass by reference
+    shashwat.name = "nothing";
+}
+
+// void change(Student shashwat){              // Pass by value
 //     shashwat.name = "nothing";
 // }
 
 int main() { 
     Student shashwat("Shashwat",8,77.6);
-
     cout<<shashwat.name<<" "<<shashwat.roll<<" "<<shashwat.marks<<'\n';
     change(shashwat);
-
+    cout<<shashwat.name<<" "<<shashwat.roll<<" "<<shashwat.marks<<'\n';
+    
+    Student *ptr = &shashwat;
+    (*ptr).name = "something";
+    cout<<shashwat.name<<" "<<shashwat.roll<<" "<<shashwat.marks<<'\n';
+    ptr->name = "arrow_changed";
     cout<<shashwat.name<<" "<<shashwat.roll<<" "<<shashwat.marks<<'\n';
     return 0;
 }
