@@ -1,3 +1,6 @@
 test.cpp
 .cph/
 test.cpp
+
+# Ignore per-folder executable output directories
+**/.exe/

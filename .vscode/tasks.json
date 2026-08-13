@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: Build active file to .exe folder",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "if not exist \"${fileDirname}\\.exe\" mkdir \"${fileDirname}\\.exe\" && g++ \"${file}\" -o \"${fileDirname}\\.exe\\${fileBasenameNoExtension}.exe\""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
