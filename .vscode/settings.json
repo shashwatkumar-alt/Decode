@@ -72,9 +72,9 @@
     "C_Cpp.errorSquiggles": "disabled",
     "code-runner.runInTerminal": true,
     "code-runner.preserveFocus": false,
+    "code-runner.fileDirectoryAsCwd": true,
     "code-runner.executorMap": {
-        "cpp": "cd /d \"$dir\" && if not exist \".exe\" mkdir \".exe\" && g++ \"$fileName\" -o \".exe\\$fileNameWithoutExt.exe\" && \".exe\\$fileNameWithoutExt.exe\"",
-        "c": "cd /d \"$dir\" && if not exist \".exe\" mkdir \".exe\" && gcc \"$fileName\" -o \".exe\\$fileNameWithoutExt.exe\" && \".exe\\$fileNameWithoutExt.exe\""
-    },
-    "C_Cpp.default.buildTask": "C/C++: Build active file to .exe folder"
+        "cpp": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"if (!(Test-Path '.exe')) { New-Item -ItemType Directory -Path '.exe' | Out-Null }; & 'C:\\Strawberry\\c\\bin\\g++.exe' '$fileName' -o '.exe\\$fileNameWithoutExt.exe'; if (`$LASTEXITCODE -eq 0) { & '.exe\\$fileNameWithoutExt.exe' }\"",
+        "c": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"if (!(Test-Path '.exe')) { New-Item -ItemType Directory -Path '.exe' | Out-Null }; & 'C:\\Strawberry\\c\\bin\\gcc.exe' '$fileName' -o '.exe\\$fileNameWithoutExt.exe'; if (`$LASTEXITCODE -eq 0) { & '.exe\\$fileNameWithoutExt.exe' }\""
+    }
 }
